@@ -26,9 +26,9 @@
     }
 
     .divider {
-      border-top: 2px solid #000;
+      border-top: 2px solid #cccccc;
       margin: 2rem auto;
-      width: 80%;
+      width: 65%;
     }
 
     /* imagen sticky centrada (detrás de los cuadros) */
@@ -99,7 +99,24 @@
 
   <h1>Título Principal</h1>
   <h2>Subtítulo Inicial</h2>
-  <p>Párrafo introductorio de ejemplo.</p>
+  <p>Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.
+
+    Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.
+    Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.
+
+    Párrafo introductorio de ejemplo.Párrafo introductorio de ejemplo.
+  </p>
+
+  <p>termino el parrafo</p>
 
   <div class="divider"></div>
 
@@ -164,6 +181,7 @@
         });
       };
 
+      // Observa el scroll para cambiar imágenes
       const observer = new IntersectionObserver((entries) => {
         let activeIndex = null;
         for (const entry of entries) {
@@ -176,11 +194,14 @@
           showSlide(activeIndex);
         }
       }, {
-        threshold: 0.05, // se activa apenas entra un 5% del slide
-        rootMargin: "-10% 0px -70% 0px" // el disparo es mucho más temprano
+        threshold: 0.05,
+        rootMargin: "-10% 0px -70% 0px"
       });
 
       slides.forEach(s => observer.observe(s));
+
+      // 🔑 Mostrar de entrada el primer slide (evita espacio en blanco)
+      showSlide(0);
 
       const checkInitial = () => {
         let activeIndex = slides.findIndex(slide => {
