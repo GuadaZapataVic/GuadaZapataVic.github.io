@@ -2,166 +2,196 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Transición de Tres Imágenes</title>
+  <title>Transición de Imágenes Compacta</title>
   <style>
     body {
       margin: 0;
       font-family: "Prumo", Georgia, serif;
-      background: #fff; /* Fondo blanco */
-      color: #000; /* Cambié el color del texto a negro para contraste */
+      background: #fff;
+      color: #000;
       overflow-x: hidden;
     }
 
-    /* Imagen fija que cubre parte de la pantalla */
+    h1, h2, h3 { text-align: center; }
+    h1 { font-size: 3rem; margin: 2rem 0 1rem; }
+    h2 { font-size: 2rem; margin: 2rem 0 1rem; }
+    h3 { font-size: 1.5rem; margin: 1rem 0 0.5rem; }
+
+    p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .divider {
+      border-top: 2px solid #000;
+      margin: 2rem auto;
+      width: 80%;
+    }
+
+    /* imagen sticky centrada (detrás de los cuadros) */
     .fixed-image {
-      position: fixed;
-      top: 50px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70%;
+      position: sticky;
+      top: 80px;
+      display: block;
+      margin: 0 auto;
+      width: 65%;
       height: auto;
-      z-index: -1;
       opacity: 0;
-      transition: opacity 0.3s ease-out;
+      transition: opacity 0.5s ease-out;
+      z-index: 0;
     }
+    .fixed-image.show { opacity: 1; }
 
-    .fixed-image.show {
-      opacity: 1;
-    }
-
-    section {
-      min-height: 100vh;
+    /* slide */
+    .image-slide {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 40px;
-      width: 100%;
+      position: relative;
+      margin: 0;
+      min-height: 100vh;
     }
 
+    /* el primer slide es más chico para que aparezca antes */
+    .image-slide:first-child {
+      min-height: 30vh;
+    }
+
+    /* cuadrito negro */
     .html-libre-hack-black {
       background-color: #000;
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       line-height: 1.4;
-      padding: 2rem;
-      max-width: 700px;
+      padding: 1.5rem;
+      max-width: 600px;
       border-radius: 4px;
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-      z-index: 1;
+      transform: translateY(20px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      z-index: 2;
+      text-align: center;
     }
-
     .html-libre-hack-black.show {
       opacity: 1;
       transform: translateY(0);
     }
 
-    /* Contenedor para scroll de cuadros */
     .image-section {
       position: relative;
-      min-height: 400vh; /* suficiente para scrollear varios cuadros */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      height: auto;
+      padding: 0;
+    }
+
+    img.normal-image {
+      display: block;
+      margin: 2rem auto;
+      width: 70%;
+      max-width: 800px;
+      height: auto;
     }
   </style>
 </head>
 <body>
 
-  <!-- Sección normal antes de la primera imagen -->
-  <section>
-    <div class="html-libre-hack-black">
-      <p>Sección normal antes de las imágenes.</p>
-    </div>
-  </section>
+  <h1>Título Principal</h1>
+  <h2>Subtítulo Inicial</h2>
+  <p>Párrafo introductorio de ejemplo.</p>
 
-  <!-- Contenedor de imágenes fijas y cuadros -->
+  <div class="divider"></div>
+
+  <h2>Subtítulo Sección 1</h2>
+  <p>Texto de ejemplo para la sección 1.</p>
+  <img src="ejemplo1.jpg" alt="Imagen ejemplo 1" class="normal-image">
+
+  <div class="divider"></div>
+
+  <h2>Subtítulo Sección 2</h2>
+  <p>Texto de ejemplo sección 2.</p>
+  <h3>Subtítulo chico</h3>
+
   <div class="image-section">
     <img src="grafico1.jpg" alt="Gráfico 1" class="fixed-image" id="img1">
     <img src="grafico2.jpg" alt="Gráfico 2" class="fixed-image" id="img2">
     <img src="grafico3.jpg" alt="Gráfico 3" class="fixed-image" id="img3">
 
-    <!-- Cuadros negros -->
-    <section>
-      <div class="html-libre-hack-black">
-        <p>Cuadro negro 1 sobre imagen 1</p>
-      </div>
-    </section>
+    <div class="image-slide" data-index="0">
+      <div class="html-libre-hack-black"><p>Cuadro 1 — texto relacionado con imagen 1</p></div>
+    </div>
 
-    <section>
-      <div class="html-libre-hack-black">
-        <p>Cuadro negro 2, transición a imagen 2</p>
-      </div>
-    </section>
+    <div class="image-slide" data-index="1">
+      <div class="html-libre-hack-black"><p>Cuadro 2 — texto relacionado con imagen 2</p></div>
+    </div>
 
-    <section>
-      <div class="html-libre-hack-black">
-        <p>Cuadro negro 3 sobre imagen 2</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="html-libre-hack-black">
-        <p>Cuadro negro 4, transición a imagen 3</p>
-      </div>
-    </section>
-
-    <section>
-      <div class="html-libre-hack-black">
-        <p>Cuadro negro 5 sobre imagen 3</p>
-      </div>
-    </section>
+    <div class="image-slide" data-index="2">
+      <div class="html-libre-hack-black"><p>Cuadro 3 — texto relacionado con imagen 3</p></div>
+    </div>
   </div>
 
-  <!-- Sección normal después de las imágenes -->
-  <section>
-    <div class="html-libre-hack-black">
-      <p>Sección normal después de las imágenes.</p>
-    </div>
-  </section>
+  <h3>Subtítulo chico</h3>
+  <img src="ejemplo2.jpg" alt="Otra imagen" class="normal-image">
+
+  <div class="divider"></div>
+
+  <h2>Subtítulo Final</h2>
+  <p>Texto ejemplo sección final.</p>
+
+  <h3>Subtítulo chico</h3>
+  <img src="ejemplo3.jpg" alt="Imagen ejemplo 3" class="normal-image">
+  <p>Parrafo acompañando imagen ejemplo 3.</p>
+
+  <h3>Subtítulo chico</h3>
+  <img src="ejemplo4.jpg" alt="Imagen ejemplo 4" class="normal-image">
+  <p>Parrafo acompañando imagen ejemplo 4.</p>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Animación cuadros negros
-      const boxes = document.querySelectorAll(".html-libre-hack-black");
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add("show");
+      const imgs = [
+        document.getElementById('img1'),
+        document.getElementById('img2'),
+        document.getElementById('img3')
+      ];
+      const slides = Array.from(document.querySelectorAll('.image-slide'));
+
+      const showSlide = (index) => {
+        imgs.forEach((img, i) => img.classList.toggle('show', i === index));
+        slides.forEach((slide, i) => {
+          const box = slide.querySelector('.html-libre-hack-black');
+          if (box) box.classList.toggle('show', i === index);
         });
-      }, { threshold: 0.3 });
-      boxes.forEach(box => observer.observe(box));
+      };
 
-      // Control de imágenes fijas
-      const img1 = document.getElementById("img1");
-      const img2 = document.getElementById("img2");
-      const img3 = document.getElementById("img3");
-      const imageSection = document.querySelector(".image-section");
-      const sectionHeight = imageSection.offsetHeight;
-
-      // Mostrar img1 al inicio
-      img1.classList.add("show");
-
-      // Cambiar imagen según scroll
-      window.addEventListener("scroll", () => {
-        const rect = imageSection.getBoundingClientRect();
-        const scrollProgress = window.innerHeight - rect.top;
-
-        if (scrollProgress < sectionHeight / 3) {
-          img1.classList.add("show");
-          img2.classList.remove("show");
-          img3.classList.remove("show");
-        } else if (scrollProgress < (sectionHeight * 2) / 3) {
-          img1.classList.remove("show");
-          img2.classList.add("show");
-          img3.classList.remove("show");
-        } else {
-          img1.classList.remove("show");
-          img2.classList.remove("show");
-          img3.classList.add("show");
+      const observer = new IntersectionObserver((entries) => {
+        let activeIndex = null;
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            activeIndex = slides.indexOf(entry.target);
+            break;
+          }
         }
+        if (activeIndex !== null) {
+          showSlide(activeIndex);
+        }
+      }, {
+        threshold: 0.05, // se activa apenas entra un 5% del slide
+        rootMargin: "-10% 0px -70% 0px" // el disparo es mucho más temprano
       });
+
+      slides.forEach(s => observer.observe(s));
+
+      const checkInitial = () => {
+        let activeIndex = slides.findIndex(slide => {
+          const rect = slide.getBoundingClientRect();
+          return rect.top < window.innerHeight * 0.7 && rect.bottom > window.innerHeight * 0.1;
+        });
+        if (activeIndex >= 0) showSlide(activeIndex);
+      };
+
+      checkInitial();
+      window.addEventListener('resize', checkInitial);
     });
   </script>
 </body>
