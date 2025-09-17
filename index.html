@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Transición de Imágenes Compacta</title>
+  <title>La transformación del paisaje religioso en la Argentina</title>
+  <link rel="icon" type="image/svg+xml" href="logo_mosaico.png">
   <style>
     body {
       margin: 0;
@@ -21,7 +22,7 @@
 
     h1, h2, h3 { text-align: center; }
     h1 { font-size: 3rem; margin: 2rem 0 0rem; }
-    h2 { font-size: 2rem; margin: 0rem 0 3rem; }
+    h2 { font-size: 2rem; margin: 0rem 0 3rem;}
     h3 { font-size: 2rem; margin: 5rem 0 2.5rem; }
 
     p {
@@ -86,6 +87,14 @@
       transform: translateY(0);
     }
 
+    .pCuadritos {
+      margin: 0 auto 0rem;
+      line-height: 1.6;
+      font-size: 1.5rem;
+      color: #fff;
+      max-width: 100%;
+    }
+
     .image-section {
       position: relative;
       height: auto;
@@ -106,10 +115,25 @@
       width: 60%;
       height: auto;
     }
+
+    .imagenPortada {
+      display: block;
+      margin: 0rem auto;
+      width: 100%;
+      height: 50%;
+    }
+    
+    .h3Especial {
+      max-width: 45%;
+      margin: 80px auto 1.5rem;
+    }
   </style>
 </head>
 <body>
   <!-- 📌 CONTENEDOR PARA TITULO Y SUBTITULO -->
+  
+  <img src="imagen.jpg" class="imagenPortada">
+  
   <div class="title-container">
     <h1>La transformación del paisaje religioso en la Argentina</h1>
     <h2>Del predominio del catolicismo a la pluralización de creencias alternativas</h2>
@@ -139,7 +163,7 @@
   <p>Este escenario de fragmentación religiosa contrasta con el monopolio que ejerció la Iglesia Católica durante gran parte de la historia. <b>Encuestas llevadas a cabo por el CONICET en 2019</b>, evidencian que los <b>argentinos priorizan</b> valores como la <b>autonomía personal</b> y los <b>derechos civiles</b> por <b>sobre las normas religiosas</b>, sin abandonar por completo la búsqueda de sentido o trascendencia.</p>
   <p>El país muta de un predominio católico a una diversidad de creencias. Hoy, en el territorio <b>conviven prácticas tradicionales, espiritualidades alternativas y sectores agnósticos</b>. Esto invita a preguntarse, entonces, en <b>qué creen los argentinos del siglo XXI y cómo estas nuevas configuraciones impactan en la vida social y política</b>.</p>
 
-  <h3>La convivencia del catolicismo y las creencias alternativas</h3>
+  <h3 class="h3Especial">La convivencia del catolicismo y las creencias alternativas</h3>
   <p><b>La Encuesta Nacional sobre Creencias que hizo el CONICET en 2019</b>, muestra en datos porcentuales de respuestas afirmativas, cómo se distribuyen las creencias en el país. Los <b>católicos argentinos combinan</b> una <b>fe</b> muy fuerte en los pilares fundamentales del cristianismo con <b>elementos de la religiosidad popular y de creencias alternativas</b>.</p>
   <p>En el ranking de creencias de los católicos <b>Jesucristo y Dios</b> encabezan la lista, con un <b>95%</b> de menciones, seguidos la <b>Virgen</b> con un <b>91,2%</b> y por el <b>Espíritu Santo</b> con un <b>88,7%</b> Los <b>santos</b> es un <b>82.7%</b>. La <b>energía</b> con un <b>82,6%</b>. La <b>suerte</b> se ubica con el <b>73,6%</b> y más de <b>un tercio</b> de los católicos <b>no cree</b> en la <b>vida después de la muerte</b>.</p>
   <p>Entre las <b>opciones alternativas</b> se destacan la <b>astrología (37,7%)</b>, los <b>curanderos (31,9%)</b> y el <b>Gauchito Gil (30,8%)</b>.</p>
@@ -152,15 +176,15 @@
     <img src="grafico3.jpg" alt="Gráfico 3" class="fixed-image" id="img3">
 
     <div class="image-slide" data-index="0">
-      <div class="html-libre-hack-black"><p>Los católicos argentinos combinan una fe muy fuerte en los pilares fundamentales del cristianismo con elementos de la religiosidad popular y de creencias alternativas.</p></div>
+      <div class="html-libre-hack-black"><p class="pCuadritos">Los católicos argentinos combinan una fe muy fuerte en los pilares fundamentales del cristianismo con elementos de la religiosidad popular y de creencias alternativas.</p></div>
     </div>
 
     <div class="image-slide" data-index="1">
-      <div class="html-libre-hack-black"><p>Las creencias con mayor aceptación son las figuras centrales del cristianismo: Jesucristo, Dios, la Virgen y el Espíritu Santo.</p></div>
+      <div class="html-libre-hack-black"><p class="pCuadritos">Las creencias con mayor aceptación son las figuras centrales del cristianismo: Jesucristo, Dios, la Virgen y el Espíritu Santo.</p></div>
     </div>
 
     <div class="image-slide" data-index="2">
-      <div class="html-libre-hack-black"><p>Las creencias alternativas y populares, sin embargo, representan altos porcentajes de adhesión, lo que evidencia una “fe mezclada” entre el dogma propio del catolicismo y formas de espiritualidad y fe.</p></div>
+      <div class="html-libre-hack-black"><p class="pCuadritos">Las creencias alternativas y populares, sin embargo, representan altos porcentajes de adhesión, lo que evidencia una “fe mezclada” entre el dogma propio del catolicismo y formas de espiritualidad y fe.</p></div>
     </div>
   </div>
 
@@ -168,19 +192,19 @@
   <h3>Ranking de creencias 2008 vs 2019</h3>
   <p>Por otro lado los datos en porcentaje de creencias relevadas en 2008 y 2019 a todos los sectores de la sociedad, <b>evidencian un retroceso en casi todos los indicadores de fe tradicionales en la sociedad</b>. La <b>creencia en Jesucristo</b> de la población argentina pasó <b>del 91,8% al 82,5%</b>, <b>la fe en Dios bajó</b> del 91,1% al 81,9% y la <b>devoción a la Virgen descendió</b> del 80,1% al 64,5%.</p>
   <p>En paralelo, expresiones de religiosidad alternativa mantuvieron cierta vigencia: la <b>astrología creció</b> del 25,9% al 33%, mientras que la figura del <b>Gauchito Gil y los curanderos</b> conservaron <b>niveles estables de adhesión</b>, en torno al 30%.</p>
-  <p><b>El diablo, en cambio, perdió terreno</b>, y pasó del 47,1% al 46%. Estas cifras evidencian un cambio de tendencia en la fe argentina: los pilares del catolicismo se mantienen como referentes de fe, pero su influencia disminuye. Esto permite la entrada de prácticas populares y creencias no institucionales.</p>
+  <p><b>El diablo, en cambio, perdió terreno</b>, y pasó del 47,1% al 46%. Estas cifras evidencian un cambio de tendencia en la fe argentina: los <b>pilares del catolicismo se mantienen</b> como referentes de fe, pero su <b>influencia disminuye</b>. Esto permite la inclusion de prácticas populares y creencias no institucionales al mapa de fe.</p>
     
   <!-- 🔥 SEGUNDO BLOQUE SOLO PARA GRAFICO4 -->
   <div class="image-section">
     <img src="grafico4.jpg" alt="Gráfico 4" class="fixed-image" id="img4">
 
     <div class="image-slide" data-index="3">
-      <div class="html-libre-hack-black"><p>Los datos muestran que, mientras la fe católica tradicional en figuras como la Virgen, Dios y los ángeles se debilita, creencias alternativas como la energía y la astrología ganan espacio, evidenciando una religiosidad más híbrida y menos institucionalizada.</p></div>
+      <div class="html-libre-hack-black"> <p class="pCuadritos">Los datos muestran que, mientras la fe católica tradicional en figuras como la Virgen, Dios y los ángeles se debilita, creencias alternativas como la energía y la astrología ganan espacio, evidenciando una religiosidad más híbrida y menos institucionalizada.</p></div>
     </div>
   </div>
 
-  <p>La disminución de la adhesión católica no puede comprenderse sin su relación con la política y la cultura: desde los conflictos por la educación laica hasta la oposición a derechos civiles como el divorcio y el matrimonio igualitario. A ello se suma la desconfianza generada por los casos de abusos y el auge de formas de espiritualidad más individuales y flexibles.</p>
-  <p>El resultado es un paisaje religioso diverso, en el que la hegemonía católica convive con nuevas búsquedas de sentido. Refleja así una distancia creciente entre las posiciones de la Iglesia y las demandas sociales.</p>
+  <p>La <b>disminución de la adhesión católica no puede comprenderse sin su relación con la política y la cultura</b>: desde los conflictos por la educación laica hasta la oposición a derechos civiles como el divorcio y el matrimonio igualitario. A ello se suma la desconfianza generada por los casos de abusos y el auge de formas de espiritualidad más individuales y flexibles.</p>
+  <p>El resultado es un paisaje religioso diverso, en el que la <b>hegemonía católica convive con nuevas búsquedas de sentido</b>. Refleja así una <b>distancia creciente entre las posiciones de la Iglesia y las demandas sociales</b>.</p>
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
